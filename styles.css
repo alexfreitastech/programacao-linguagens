@@ -1,0 +1,150 @@
+html { box-sizing: border-box; overflow-y: scroll; }
+*, *:before, *:after { box-sizing: inherit; }
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #111418;
+    color: #e0e8f0;
+    margin: 0; padding: 0;
+    padding-top: 60px;
+    font-size: 22px;
+    line-height: 1.7;
+}
+
+header {
+    position: fixed; top: 0; left: 0; width: 100%;
+    background: linear-gradient(180deg, #1e2530 0%, #181e28 100%);
+    color: white; padding: 12px 0; text-align: center; font-size: 20px;
+    border-bottom: 2px solid #00d4ff;
+    z-index: 1000;
+    box-shadow: 0 3px 18px rgba(0, 0, 0, 0.6);
+}
+
+.abas { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; padding: 0 16px; }
+
+.aba {
+    background-color: #252d3a;
+    color: #b8d8e8;
+    border: 1px solid #00d4ff;
+    padding: 9px 22px; border-radius: 30px; cursor: pointer;
+    transition: background 0.25s, transform 0.15s, box-shadow 0.25s;
+    font-size: 18px; font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.aba:hover {
+    background-color: #2e3d50;
+    transform: scale(1.06);
+    box-shadow: 0 4px 14px rgba(0, 212, 255, 0.3);
+}
+.aba.active {
+    background-color: #111418;
+    color: #00d4ff;
+    border-color: #00d4ff;
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.3);
+}
+
+#conteudos { padding: 40px 60px; width: 100%; max-width: 1100px; margin: 0 auto; }
+
+h2 {
+    text-align: center; color: #00d4ff; font-size: 30px;
+    margin: 28px 0 18px; letter-spacing: 0.02em;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+.conteudo { display: none; animation: fadeIn 0.35s ease; }
+.conteudo.active { display: block; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+p { text-align: justify; margin: 0 auto 18px auto; font-size: 22px; max-width: 850px; color: #c8d8e8; }
+
+img {
+    max-width: 100%; border-radius: 14px;
+    box-shadow: 0 0 0 3px #00d4ff, 0 6px 18px rgba(0,0,0,0.5);
+    margin-top: 10px; transition: transform 0.3s ease, box-shadow 0.3s;
+}
+img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 4px #80eaff, 0 10px 28px rgba(0,0,0,0.55);
+}
+
+.Ada, .Bug, .Linguagens, .ia-item {
+    display: flex; align-items: center; justify-content: center;
+    gap: 28px; margin: 25px auto; max-width: 950px;
+    background: rgba(30, 45, 65, 0.35);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 18px; padding: 24px;
+}
+.Ada p, .Bug p, .Linguagens p, .ia-item p { margin: 0; }
+.Ada img { width: 210px; flex-shrink: 0; } .Ada p { max-width: 590px; }
+.Bug img { width: 260px; flex-shrink: 0; } .Bug p { max-width: 490px; }
+.Linguagens img { width: 310px; flex-shrink: 0; } .Linguagens p { max-width: 500px; }
+.ia-img { width: 145px; flex-shrink: 0; } .ia-item p { max-width: 590px; }
+
+.web { display: flex; justify-content: center; align-items: center; gap: 28px; flex-wrap: wrap; margin: 24px 0; }
+.web img { width: 230px; }
+
+.codigo {
+    background: linear-gradient(135deg, #0a0e14, #060a10);
+    border-left: 5px solid #00d4ff;
+    border: 1px solid rgba(0, 212, 255, 0.3); border-left-width: 5px;
+    padding: 18px 20px; border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 15px auto; max-width: 800px; font-size: 18px;
+    color: #70d8f0; box-shadow: inset 0 0 20px rgba(0,0,0,0.4);
+}
+.codigo p { color: #70d8f0; font-family: 'Courier New', Courier, monospace; font-size: 18px; margin-bottom: 4px; text-align: left; }
+
+.quiz-container { display: flex; flex-direction: column; gap: 22px; }
+.card-pergunta {
+    background: linear-gradient(135deg, rgba(25, 38, 55, 0.6), rgba(15, 22, 35, 0.7));
+    border: 1px solid rgba(0, 212, 255, 0.25);
+    border-radius: 16px; padding: 22px 26px; font-size: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card-pergunta:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.5); border-color: rgba(0, 212, 255, 0.5); }
+.card-pergunta h3 { color: #b0dff0; margin-bottom: 14px; font-size: 21px; }
+
+.alternativas label {
+    display: block; margin: 7px 0; padding: 10px 14px;
+    border-radius: 10px; border: 1px solid transparent;
+    transition: background 0.2s, border-color 0.2s;
+    cursor: pointer; color: #c8d8e8;
+}
+.alternativas input { margin-right: 10px; accent-color: #00d4ff; }
+label:hover { background: rgba(0, 212, 255, 0.1); border-color: rgba(0, 212, 255, 0.3); }
+.correta { background-color: rgba(0, 100, 130, 0.4) !important; border: 2px solid #00d4ff !important; color: #a0f0ff !important; }
+.errada { background-color: rgba(120, 20, 20, 0.4) !important; border: 2px solid #e74c3c !important; color: #ffaaaa !important; }
+
+footer {
+    background-color: #1e2530;
+    color: white; text-align: center; padding: 18px; font-size: 16px;
+    margin-top: 25px; border-top-left-radius: 10px; border-top-right-radius: 10px;
+    display: flex; flex-direction: column; align-items: center;
+}
+footer p { font-family: Georgia, 'Times New Roman', Times, serif; margin: 4px 0; }
+
+#btnTopo {
+    position: fixed; bottom: 28px; right: 28px;
+    background: linear-gradient(135deg, #1e2d42, #2e3d50);
+    color: white; border: 1px solid #00d4ff;
+    padding: 11px 20px; font-size: 18px; border-radius: 50px; cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+    transition: transform 0.25s, background 0.25s, opacity 0.3s;
+    opacity: 0; pointer-events: none; z-index: 9999;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#btnTopo:hover { background: linear-gradient(135deg, #2e3d50, #00d4ff); transform: scale(1.1) translateY(-2px); box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4); }
+#btnTopo.mostrar { opacity: 1; pointer-events: auto; }
+
+@media (max-width: 900px) {
+    #conteudos { padding: 25px; } body { font-size: 20px; } h2 { font-size: 26px; }
+    .Ada, .Bug, .Linguagens, .ia-item { flex-direction: column; text-align: center; }
+    .Ada img, .Bug img, .Linguagens img { width: 75%; } .web img { width: 160px; } .codigo { font-size: 16px; }
+}
+@media (max-width: 600px) {
+    .aba { font-size: 15px; padding: 8px 14px; } #conteudos { padding: 18px; } h2 { font-size: 22px; } p { font-size: 18px; }
+}
